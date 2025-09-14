@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical AI Design System - Professional Healthcare Technology */
+
+@layer base {
+  :root {
+    /* Medical Blue Palette */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+    
+    /* Medical Brand Colors */
+    --medical-primary: 210 100% 45%;
+    --medical-primary-light: 210 100% 85%;
+    --medical-secondary: 195 100% 42%;
+    --medical-accent: 285 85% 65%;
+    --medical-success: 142 76% 36%;
+    --medical-warning: 38 92% 50%;
+    
+    /* Neural Network Colors */
+    --neural-gradient-start: 210 100% 45%;
+    --neural-gradient-mid: 195 100% 42%;
+    --neural-gradient-end: 285 85% 65%;
+    
+    /* Professional Grays */
+    --medical-gray-50: 210 20% 98%;
+    --medical-gray-100: 210 20% 94%;
+    --medical-gray-200: 210 16% 88%;
+    --medical-gray-300: 210 14% 78%;
+    --medical-gray-400: 210 14% 58%;
+    --medical-gray-500: 210 12% 45%;
+    --medical-gray-600: 210 16% 35%;
+    --medical-gray-700: 210 18% 25%;
+    --medical-gray-800: 215 25% 15%;
+    --medical-gray-900: 215 25% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Updated semantic tokens using medical colors */
+    --primary: var(--medical-primary);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--medical-gray-100);
+    --secondary-foreground: var(--medical-gray-800);
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: var(--medical-accent);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: var(--medical-gray-200);
+    --input: var(--medical-gray-200);
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Medical AI Component Styles */
+@layer components {
+  /* Neural Network Gradient */
+  .neural-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--neural-gradient-start)),
+      hsl(var(--neural-gradient-mid)),
+      hsl(var(--neural-gradient-end))
+    );
+  }
+  
+  /* Medical Button Variants */
+  .btn-medical {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-6 py-3 rounded-lg;
+    @apply hover:from-blue-700 hover:to-blue-800 transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary-medical {
+    @apply bg-white text-blue-600 border-2 border-blue-200 font-semibold px-6 py-3 rounded-lg;
+    @apply hover:bg-blue-50 hover:border-blue-300 transition-all duration-300;
+  }
+  
+  /* Medical Cards */
+  .medical-card {
+    @apply bg-white rounded-xl shadow-md border border-gray-100;
+    @apply hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  /* Brain Animation */
+  .brain-pulse {
+    animation: brain-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes brain-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+  
+  /* Neural Network Animation */
+  .neural-flow {
+    animation: neural-flow 3s ease-in-out infinite;
+  }
+  
+  @keyframes neural-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+/* Medical Typography */
+@layer utilities {
+  .text-medical-primary {
+    color: hsl(var(--medical-primary));
+  }
+  
+  .text-medical-secondary {
+    color: hsl(var(--medical-secondary));
+  }
+  
+  .text-medical-accent {
+    color: hsl(var(--medical-accent));
+  }
+  
+  .bg-medical-primary {
+    background-color: hsl(var(--medical-primary));
+  }
+  
+  .bg-medical-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--medical-primary)),
+      hsl(var(--medical-secondary))
+    );
+  }
+}
